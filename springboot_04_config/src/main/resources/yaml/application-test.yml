@@ -1,0 +1,6 @@
+
+# 测试环境
+spring:
+  profiles: test
+server:
+  port: 82

@@ -1,0 +1,36 @@
+test:
+  prop: testValue
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///springboot?serverTimezone=UTC
+    username: root
+    password: 2410
+  boot:
+    admin:
+      client:
+        url: http://localhost:8080
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+testcase:
+  book:
+    id: ${random.int}
+    name: ${random.value}
+    uuid: ${random.uuid}
+    description: ${random.value}
+
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+server:
+  port: 8081

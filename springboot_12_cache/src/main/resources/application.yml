@@ -1,0 +1,44 @@
+test:
+  prop: testValue
+
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql:///springboot?serverTimezone=UTC
+      username: root
+      password: 2410
+
+  # redis config
+  cache:
+    type: redis
+    redis:
+      cache-null-values: false
+      time-to-live: 10
+      key-prefix:
+      use-key-prefix: true
+
+  redis:
+    host: localhost
+    port: 6379
+
+
+  # ehcache config
+#  cache:
+#    type: ehcache
+#    ehcache:
+#      config: ehcache.xml
+
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+
+testcase:
+  book:
+    id: ${random.int}
+    name: ${random.value}
+    uuid: ${random.uuid}
+    description: ${random.value}

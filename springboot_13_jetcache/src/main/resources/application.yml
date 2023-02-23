@@ -1,0 +1,44 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      password: 2410
+      url: jdbc:mysql:///springboot?serverTimezone=UTC
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      table-prefix: tb_
+      id-type: auto
+
+
+jetcache:
+  statIntervalMinutes: 1
+  local:
+    default:
+      type: linkedhashmap
+      keyConvertor: fastjson
+      valueEncode: java
+      valueDecode: java
+  remote:
+    default:
+      type: redis
+      host: localhost
+      port: 6379
+      keyConvertor: fastjson
+      valueEncode: java
+      valueDecode: java
+      poolconfig:
+        maxTotal: 50
+    sms:
+      type: redis
+      host: localhost
+      port: 6379
+      keyConvertor: fastjson
+      poolconfig:
+        maxTotal: 50

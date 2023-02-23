@@ -1,0 +1,6 @@
+
+# 开发环境
+spring:
+  profiles: dev
+server:
+  port: 81

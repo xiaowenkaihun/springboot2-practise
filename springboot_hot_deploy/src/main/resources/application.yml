@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql:///springboot?serverTimezone=UTC
+      username: root
+      password: 2410
+  devtools:
+    restart:
+#      设置不参与热部署的文件夹或者文件
+      additional-exclude: static/**
+      enabled: false
+server:
+  port: 8080
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
